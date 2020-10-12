@@ -50,6 +50,7 @@ group :development do
 end
 
 group :test do
+  gem 'simplecov', '~> 0.19.0'
   # Strategies for cleaning databases using ActiveRecord. Can be used to ensure a clean state for testing.
   gem 'database_cleaner-active_record', '~> 1.8'
 end

@@ -47,10 +47,13 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # RuboCop is a Ruby code style checking and code formatting tool. It aims to enforce the community-driven Ruby Style Guide.
+  gem 'rubocop', '~> 0.93.0', require: false
 end
 
 group :test do
-  gem 'simplecov', '~> 0.19.0'
+  # Code coverage for Ruby with a powerful configuration library and automatic merging of coverage across test suites
+  gem 'simplecov', '~> 0.19.0', require: false
   # Strategies for cleaning databases using ActiveRecord. Can be used to ensure a clean state for testing.
   gem 'database_cleaner-active_record', '~> 1.8'
 end

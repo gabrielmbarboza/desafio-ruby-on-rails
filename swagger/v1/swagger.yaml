@@ -1,0 +1,86 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/stores":
+    post:
+      summary: Creates a store
+      tags:
+      - Store
+      parameters: []
+      responses:
+        '201':
+          description: blog created
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                owner:
+                  type: string
+              required:
+              - name
+              - owner
+  "/stores/{id}":
+    get:
+      summary: Retrieves a store
+      tags:
+      - Stores
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: store found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  owner:
+                    type: string
+                required:
+                - id
+                - name
+                - owner
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  owner:
+                    type: string
+                required:
+                - id
+                - name
+                - owner
+        '404':
+          description: store not found
+          content: {}
+        '406':
+          description: unsupported accept header
+          content: {}
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

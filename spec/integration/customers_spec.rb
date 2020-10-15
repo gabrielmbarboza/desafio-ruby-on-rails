@@ -1,54 +1,52 @@
 require 'swagger_helper'
 
-describe 'Stores API Documentation' do
+describe 'Customers API Documentation' do
 
-  path '/stores' do
+  path '/customers' do
 
-    post 'Creates a store' do
-      tags 'Store'
+    post 'Creates a customer' do
+      tags 'customer'
       consumes 'application/json'
-      parameter name: :store, in: :body, schema: {
+      parameter name: :customer, in: :body, schema: {
         type: :object,
         properties: {
-          name: { type: :string },
-          owner: { type: :string }
+          itr: { type: :string },
         },
-        required: [ 'name', 'owner' ]
+        required: [ 'itr' ]
       }
 
       response '201', 'blog created' do
-        let(:store) { { name: 'foo', owner: 'bar' } }
+        let(:customer) { { itr: '11111111111' } }
         run_test!
       end
 
       response '422', 'invalid request' do
-        let(:store) { { name: 'foo' } }
+        let(:customer) { { itr: '1111111111111' } }
         run_test!
       end
     end
   end
 
-  path '/stores/{id}' do
+  path '/customers/{id}' do
 
-    get 'Retrieves a store' do
-      tags 'Stores'
+    get 'Retrieves a customer' do
+      tags 'customers'
       produces 'application/json', 'application/xml'
       parameter name: :id, in: :path, type: :string
 
-      response '200', 'store found' do
+      response '200', 'customer found' do
         schema type: :object,
           properties: {
             id: { type: :integer },
-            name: { type: :string },
-            owner: { type: :string }
+            itr: { type: :string },
           },
-          required: [ 'id', 'name', 'owner' ]
+          required: [ 'id', 'itr' ]
 
-        let(:id) { Store.create(name: 'foo', owner: 'bar').id }
+        let(:id) { customer.create(itr: 'foo').id }
         run_test!
       end
 
-      response '404', 'store not found' do
+      response '404', 'customer not found' do
         let(:id) { 'invalid' }
         run_test!
       end

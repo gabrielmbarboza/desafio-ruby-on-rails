@@ -12,7 +12,7 @@ RSpec.describe Store, type: :model do
     expect(store2).to_not be_valid
   end
 
-  it "Should not be valid, city is not present" do
+  it "Should not be valid, owner is not present" do
     store2 = build(:store, owner: nil)
     expect(store2).to_not be_valid
   end

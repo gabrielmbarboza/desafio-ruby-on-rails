@@ -1,0 +1,9 @@
+AllCops:
+  Style/Documentation:
+    Include:
+      - app/models/**/*
+      - lib/**/*
+  Exclude:
+    - "db/**/*"
+    - "config/**/*"
+    - "libs/**/*"

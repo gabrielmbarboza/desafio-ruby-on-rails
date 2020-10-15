@@ -17,12 +17,13 @@ RSpec.describe "/stores", type: :request do
   # Store. As you add validations to Store, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    attributes_for(:store)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    attributes_for(:store, name: nil)
   }
+
 
   # This should return the minimal set of values that should be in the headers
   # in order to pass any filters (e.g. authentication) defined in
@@ -85,21 +86,22 @@ RSpec.describe "/stores", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        attributes_for(:store)
       }
 
       it "updates the requested store" do
         store = Store.create! valid_attributes
         patch store_url(store),
-              params: { store: invalid_attributes }, headers: valid_headers, as: :json
+              params: { store: new_attributes }, headers: valid_headers, as: :json
         store.reload
-        skip("Add assertions for updated state")
+        expect(store.name).to eq(new_attributes[:name])
+        expect(store.owner).to eq(new_attributes[:owner])
       end
 
       it "renders a JSON response with the store" do
         store = Store.create! valid_attributes
         patch store_url(store),
-              params: { store: invalid_attributes }, headers: valid_headers, as: :json
+              params: { store: new_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:ok)
         expect(response.content_type).to eq("application/json")
       end

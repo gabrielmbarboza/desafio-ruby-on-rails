@@ -15,7 +15,7 @@ describe 'Customers API Documentation' do
         required: [ 'itr' ]
       }
 
-      response '201', 'blog created' do
+      response '201', 'customer created' do
         let(:customer) { { itr: '11111111111' } }
         run_test!
       end

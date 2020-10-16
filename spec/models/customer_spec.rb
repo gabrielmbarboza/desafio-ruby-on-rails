@@ -22,7 +22,7 @@ RSpec.describe Customer, type: :model do
     expect(customer2).to_not be_valid
   end
 
-  it "Should not be valid, irt whit invalid format" do
+  it "Should not be valid, irt with invalid format" do
     customer2 = build(:customer, itr: "111111.1111")
     expect(customer2).to_not be_valid
   end

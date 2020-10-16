@@ -16,7 +16,7 @@ describe 'Stores API Documentation' do
         required: [ 'name', 'owner' ]
       }
 
-      response '201', 'blog created' do
+      response '201', 'store created' do
         let(:store) { { name: 'foo', owner: 'bar' } }
         run_test!
       end

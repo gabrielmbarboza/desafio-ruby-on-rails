@@ -94,6 +94,7 @@ RSpec.describe "/transaction_types", type: :request do
               params: { transaction_type: new_attributes }, headers: valid_headers, as: :json
         transaction_type.reload
         expect(transaction_type.name).to eq(new_attributes[:name])
+        expect(transaction_type.code).to eq(new_attributes[:code])
         expect(transaction_type.operation).to eq(new_attributes[:operation])
       end
 

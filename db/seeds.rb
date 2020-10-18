@@ -7,14 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 transaction_types = [
-  { name: 'Débito', operation: 'C' },
-  { name: 'Boleto', operation: 'D' },
-  { name: 'Financiamento', 	operation: 'D' },
-  { name: 'Crédito', 	operation: 'C' },
-  { name: 'Recebimento Empréstimo', operation: 'C' },
-  { name: 'Vendas	Entrada', operation: 'C' },
-  { name: 'Recebimento TED', operation: 'C' },
-  { name: 'Recebimento DOC', operation: 'C' },
-  { name: 'Aluguel', operation: 'D' }]
+  { name: 'Débito', code: 1, operation: 'C' },
+  { name: 'Boleto', code: 2, operation: 'D' },
+  { name: 'Financiamento', 	code: 3, operation: 'D' },
+  { name: 'Crédito', 	code: 4, operation: 'C' },
+  { name: 'Recebimento Empréstimo', code: 5, operation: 'C' },
+  { name: 'Vendas	Entrada', code: 6, operation: 'C' },
+  { name: 'Recebimento TED', code: 7, operation: 'C' },
+  { name: 'Recebimento DOC', code: 8, operation: 'C' },
+  { name: 'Aluguel', code: 9, operation: 'D' }]
 
-  TransactionType.create(transaction_types)
+  TransactionType.create!(transaction_types)

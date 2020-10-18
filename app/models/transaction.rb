@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+# encoding: UTF-8
+
 class Transaction < ApplicationRecord
   validates :amount, presence: true
   validates :t_date, presence: true

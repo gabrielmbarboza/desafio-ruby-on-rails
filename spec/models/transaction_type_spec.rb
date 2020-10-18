@@ -12,6 +12,16 @@ RSpec.describe TransactionType, type: :model do
     expect(transaction_type2).to_not be_valid
   end
 
+  it "Should not be valid, code is not present" do
+    transaction_type2 = build(:transaction_type, code: nil)
+    expect(transaction_type2).to_not be_valid
+  end
+
+  it "Should not be valid, code with invalid format" do
+    customer2 = build(:transaction_type, code: "foo")
+    expect(customer2).to_not be_valid
+  end
+
   it "Should not be valid, operation is not present" do
     transaction_type2 = build(:transaction_type, operation: nil)
     expect(transaction_type2).to_not be_valid

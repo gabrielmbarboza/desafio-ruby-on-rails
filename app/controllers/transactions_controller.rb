@@ -33,6 +33,10 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def upload
+    TransactionService.new(params[:cnab]).call if (params[:cnab]).present?
+  end
+
   # DELETE /transactions/1
   def destroy
     @transaction.destroy

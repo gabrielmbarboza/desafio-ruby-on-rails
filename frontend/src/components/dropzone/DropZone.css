@@ -1,0 +1,63 @@
+/********** File box **********/
+.file-box {
+  align-items: center;
+  background: #FBFAFA;
+  border: #18C88E 2px dashed;
+  border-radius: 12px;
+  height: 305px;
+  text-align: center;
+  width: 460px;
+}
+
+.file-box-text {
+  text-align: center;
+}
+
+.file-box-text-img {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.file-box-title {
+  color: #000000;
+  display: block;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.file-box-subtitle {
+  color: #576C95;
+  display: block;
+  font-size: 0.9rem;
+}
+
+.file-box-text-drag {
+  color: #667BA5;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.file-box-text-click {
+  color: #667BA5;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: -15px;
+}
+
+.dropzone-button {
+  align-items: center;
+  background: #F7096C;
+  border: none;
+  border-radius: 10px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.3rem;
+  font-weight: bold;
+  height: 50px;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 500px;
+  transition: all 0.5s;
+}

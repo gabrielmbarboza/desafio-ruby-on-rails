@@ -1,0 +1,33 @@
+main {
+  align-items: center;
+  /* background: green; */
+  display: grid;
+  grid-area: main;
+  justify-items: center;
+}
+
+aside {
+  align-items: center;
+  display: grid;
+  flex-wrap: wrap;
+  grid-area: aside;
+  justify-items: center;
+}
+
+footer {
+  /* background: brown; */
+  grid-area: footer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 15vh 80vh 15vh;
+  grid-template-areas: "header header"
+                       "main aside"
+                       "footer footer";
+}
+
+button:active { background-color: #f57daf;}
+button:hover { background: #c50656; opacity: 1;}
+button:focus { outline: none !important; }

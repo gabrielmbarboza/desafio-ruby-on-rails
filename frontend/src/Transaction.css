@@ -1,0 +1,98 @@
+main.transactions {
+  display: inline-block;
+  grid-area: main;
+}
+
+.transactions-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 15vh 85vh 10vh;
+  grid-template-areas: "header header"
+                       "main main"
+                       "footer footer";
+}
+
+.select-button {
+  align-items: center;
+  display: flex;
+  height: 15px;
+  justify-content: center;
+  width: 145px;
+  margin-right: 80px;
+}
+
+.owner-box {
+  align-items: flex-end;
+  display: flex;
+  height: 80px;
+  justify-content: flex-end;
+}
+
+.owner-info {
+  align-items: center;
+  color: #7B7B7B;
+  display: flex;
+  font-size: 18px;
+  height: 100px;
+  justify-content: space-between;
+  padding: 10px 80px 0 80px;
+}
+
+.owner-info-text {
+  display: block;
+}
+
+.positive {
+  color: #028B5E;
+}
+
+.negative {
+  color: #C22D16
+}
+
+.transactions-table {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+table {
+  border-collapse: collapse;
+  height: 30vh;
+  width: 92%;
+}
+
+table thead th {
+  border-bottom: 1px solid #CECECE;
+  color: #606060;
+  font-weight: normal;
+  padding-bottom: 8px;
+}
+
+td {
+  height: 40px;
+  text-align: center;
+  font-size: 14px;
+  justify-content: center;
+}
+
+.odd {
+  background-color: #F7F7F7;
+}
+
+.button {
+  color: #FFFFFF;
+  background: #F7096C;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  height: 34px;
+  transition: all 0.5s;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 145px;
+  margin-right: 80px;
+  cursor: pointer;
+}

@@ -1,0 +1,39 @@
+html, body, ul, li, p {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  grid-area: header;
+  justify-content: space-between;
+  padding: 0 80px;
+}
+
+.menu {
+  display: flex;
+  font-size: 1.2rem;
+}
+
+.menu li {
+  margin-left: 10px;
+}
+
+.menu li a {
+  color: #ABA5A5;
+  display: block;
+  padding: 10px;
+}
+
+.menu li a:hover {
+  color: #7B7B7B;
+}
